@@ -13,8 +13,8 @@ abstract Thread(Impl) from Impl {
 		
 	static public var current(get, never):Thread;
 	
-		static inline function get_current():Thread
-			return Impl.getCurrent();
+	static inline function get_current():Thread
+		return Impl.getCurrent();
 			
 	static public var MAIN(default, null) = current;
 }
