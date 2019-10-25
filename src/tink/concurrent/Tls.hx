@@ -66,6 +66,9 @@ abstract Tls<T>(Impl<T>) from Impl<T> {
 				
 		}
 	#if hl
+		#if (!target.threaded)
+		#error "HashLink needs a recent version of Haxe4 to use sys.thread, on yours target.threaded is not defined"
+		#end
 		private abstract Impl<T>(Dynamic) {
 			public inline function new() 
 				this = new sys.thread.Tls();

@@ -62,6 +62,9 @@ abstract Queue<T>(Impl<T>) {
           else this.poll();
     }
 	#elseif hl
+		#if (!target.threaded)
+		#error "HashLink needs a recent version of Haxe4 to use sys.thread, on yours target.threaded is not defined"
+		#end
 	private abstract Impl<T>(Any) {
 		public inline function new() 
 			this = new sys.thread.Deque<T>();

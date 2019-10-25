@@ -83,6 +83,9 @@ abstract Thread(Impl) from Impl {
 		}
 
 	#elseif hl
+		#if (!target.threaded)
+		#error "HashLink needs a recent version of Haxe4 to use sys.thread, on yours target.threaded is not defined"
+		#end
 		private abstract Impl(Any) {
 			static public inline function create(f:Void->Void):Impl
 				return sys.thread.Thread.create(f);

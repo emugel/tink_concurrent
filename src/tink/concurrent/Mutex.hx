@@ -106,6 +106,9 @@ abstract Mutex(Impl) {
         }
     }
 	#elseif hl
+		#if (!target.threaded)
+		#error "HashLink needs a recent version of Haxe4 to use sys.thread, on yours target.threaded is not defined"
+		#end
 		private abstract Impl(Any) {
 			public inline function new()
 				this = new sys.thread.Mutex();
