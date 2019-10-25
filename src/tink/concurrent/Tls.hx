@@ -65,6 +65,21 @@ abstract Tls<T>(Impl<T>) from Impl<T> {
 				this = new java.lang.ThreadLocal();
 				
 		}
+	#if hl
+		private abstract Impl<T>(Dynamic) {
+			public inline function new() 
+				this = new sys.thread.Tls();
+
+			public var value(get, set) : T;
+			
+			inline function get_value() : T 
+				return this.value;
+				
+			inline function set_value( v : T ) {
+				return this.value = v;
+				return v;
+			}
+		}	
 	#elseif cs
     private typedef Impl<T> = Naive<T>;//TODO: use .NET 4.5's ThreadLocal when possible
 	#else

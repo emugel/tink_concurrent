@@ -105,7 +105,21 @@ abstract Mutex(Impl) {
           Monitor.Exit(this);
         }
     }
-  #else
+	#elseif hl
+		private abstract Impl(Any) {
+			public inline function new()
+				this = new sys.thread.Mutex();
+				
+			public inline function acquire()
+				this.acquire();
+			
+			public inline function tryAcquire():Bool
+				return this.tryAcquire();
+				
+			public inline function release()
+				this.release();
+		}
+	#else
 		private typedef Impl = Thread;//For consistent error messages
 	#end
 #else

@@ -61,6 +61,20 @@ abstract Queue<T>(Impl<T>) {
           if (block) this.take();
           else this.poll();
     }
+	#elseif hl
+	private abstract Impl<T>(Any) {
+		public inline function new() 
+			this = new sys.thread.Deque<T>();
+
+		public inline function add(i:T)
+			this.add(i);
+
+		public function push(i:T) 
+			this.push(i);
+
+		public function pop(block:Bool):Null<T>
+			this.pop(block);
+
 	#elseif cs
     //TODO: this is in bad need of a proper implementation
 		private typedef Impl<T> = Naive<T>;

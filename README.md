@@ -27,7 +27,7 @@ There's exactly two things that will not compile without `-D concurrent`
 
 In those cases the library will actually tell you explicitly that `concurrent` is required (instead of the compiler complaining that a class or method is not found).
 
-Support for `-D concurrent` exists on neko, java and cpp. On all other targets you will get compiler errors. 
+Support for `-D concurrent` exists on neko, java, cpp and hl. On all other targets you will get compiler errors. 
 
 ## Handling the differences introduced with `-D concurrent`
 
