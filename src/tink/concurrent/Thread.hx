@@ -91,7 +91,7 @@ abstract Thread(Impl) from Impl {
 				return sys.thread.Thread.create(f);
 
 			static public inline function getCurrent():Impl
-				return sys.thread.Thread.current();
+				return untyped sys.thread.Thread.current();
 		}
 
 	#else
