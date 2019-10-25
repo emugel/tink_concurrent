@@ -70,13 +70,13 @@ abstract Queue<T>(Impl<T>) {
 			this = new sys.thread.Deque<T>();
 
 		public inline function add(i:T)
-			untyped this.add(i);
+			(untyped this).add(i);
 
 		public function push(i:T) 
-			untyped this.push(i);
+			(untyped this).push(i);
 
 		public function pop(block:Bool):Null<T>
-			untyped this.pop(block);
+			return (untyped this).pop(block);
 	}
 	#elseif cs
     //TODO: this is in bad need of a proper implementation
