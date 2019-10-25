@@ -109,18 +109,18 @@ abstract Mutex(Impl) {
 		#if (!target.threaded)
 		#error "HashLink needs a recent version of Haxe4 to use sys.thread, on yours target.threaded is not defined"
 		#end
-		private abstract Impl(Any) {
+		private abstract Impl (Any) {
 			public inline function new()
 				this = new sys.thread.Mutex();
 				
 			public inline function acquire()
-				this.acquire();
+				untyped this.acquire();
 			
 			public inline function tryAcquire():Bool
-				return this.tryAcquire();
+				return untyped this.tryAcquire();
 				
 			public inline function release()
-				this.release();
+				untyped this.release();
 		}
 	#else
 		private typedef Impl = Thread;//For consistent error messages

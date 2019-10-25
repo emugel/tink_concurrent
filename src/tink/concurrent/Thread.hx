@@ -88,7 +88,7 @@ abstract Thread(Impl) from Impl {
 		#end
 		private abstract Impl(Any) {
 			static public inline function create(f:Void->Void):Impl
-				return sys.thread.Thread.create(f);
+				return untyped sys.thread.Thread.create(f);
 
 			static public inline function getCurrent():Impl
 				return untyped sys.thread.Thread.current();
