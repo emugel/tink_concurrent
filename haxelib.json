@@ -12,8 +12,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"releasenote": "Correct java behavior.",
-	"version": "0.1.3",
+	"releasenote": "HashLink support on recent Haxe 4, through sys.thread",
+	"version": "0.1.4",
 	"url": "http://haxetink.org/tink_concurrent",
 	"dependencies": {
 		"tink_core": ""

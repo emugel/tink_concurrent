@@ -76,10 +76,10 @@ abstract Tls<T>(Impl<T>) from Impl<T> {
 			public var value(get, set) : T;
 			
 			inline function get_value() : T 
-				return this.value;
+				return (untyped this).value;
 				
 			inline function set_value( v : T ) {
-				return this.value = v;
+				return (untyped this).value = v;
 				return v;
 			}
 		}	

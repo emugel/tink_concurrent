@@ -70,18 +70,18 @@ abstract Queue<T>(Impl<T>) {
 			this = new sys.thread.Deque<T>();
 
 		public inline function add(i:T)
-			this.add(i);
+			untyped this.add(i);
 
 		public function push(i:T) 
-			this.push(i);
+			untyped this.push(i);
 
 		public function pop(block:Bool):Null<T>
-			this.pop(block);
-
+			untyped this.pop(block);
+	}
 	#elseif cs
     //TODO: this is in bad need of a proper implementation
 		private typedef Impl<T> = Naive<T>;
-  #else
+	#else
 		private typedef Impl<T> = Naive<T>;
 	#end
   private class Naive<T> {
